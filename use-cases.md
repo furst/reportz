@@ -10,21 +10,21 @@ En programmerare på ett företag vill kunna hålla redo på testrapporter till 
 
 Förutsätter att användaren är inloggad
 
-1.Användaren klickar på "ny rapport"
-2.Systemet visar sidan
-3.Användaren fyller i "testrapport" och klickar på spara
-4.Systemet sparar datat i databasen och skickar användaren vidare för att lägga till ett testfall
-5.Användaren skriver in "navigera till sidan" och "gå till adressen www.google.se" och klickar på "spara testfall"
-6.Systemet sparar datat i databasen och skickar användaren vidare för att lägga till ett nytt testfall
-7.Användaren klickar på "eller fortsätt till rapport"
-8.Systemet visar information om rapporten
+1. Användaren klickar på "ny rapport"
+2. Systemet visar sidan
+3. Användaren fyller i "testrapport" och klickar på spara
+4. Systemet sparar datat i databasen och skickar användaren vidare för att lägga till ett testfall
+5. Användaren skriver in "navigera till sidan" och "gå till adressen www.google.se" och klickar på "spara testfall"
+6. Systemet sparar datat i databasen och skickar användaren vidare för att lägga till ett nytt testfall
+7. Användaren klickar på "eller fortsätt till rapport"
+8. Systemet visar information om rapporten
 
 Extensions
-3a.Användaren skriver in en tomsträng
-1.Systemet visar valideringsfel
+3a. Användaren skriver in en tomsträng
+1. Systemet visar valideringsfel
 
-5a.Användaren skriver in en tomsträng
-1.Systemet visar valideringsfel
+5a. Användaren skriver in en tomsträng
+1. Systemet visar valideringsfel
 
 ## Brief
 
