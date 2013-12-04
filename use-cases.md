@@ -45,11 +45,14 @@ En icke inloggad användare går in på en rapport den fått via en länk. den s
 
 ## Casual
 
-### UC7 En inloggad användare vill titta på en ifylld rapport, hen går in på rapporten och klickar på "visa" under en användare under "ifyllda rapporter". Rapporten visas i ett enkelt format.
+### UC7
+En inloggad användare vill titta på en ifylld rapport, hen går in på rapporten och klickar på "visa" under en användare under "ifyllda rapporter". Rapporten visas i ett enkelt format.
 
-### UC8 En användare klickar på editera på ett testcase eller en rapport, får upp ett redigerfönster och en spara knapp. Ändrar uppgifter och klickar på spara. Vid valideringsfel visas ett meddelande.
+### UC8
+En användare klickar på editera på ett testcase eller en rapport, får upp ett redigerfönster och en spara knapp. Ändrar uppgifter och klickar på spara. Vid valideringsfel visas ett meddelande.
 
-### UC9 En användare vill ta bort ett testcase eller en rapport. Användaren klickar på "ta bort" och föremålet tas bort.
+### UC9
+En användare vill ta bort ett testcase eller en rapport. Användaren klickar på "ta bort" och föremålet tas bort.
 
 
 
