@@ -1,8 +1,8 @@
 # Releaseinfo
 
-*Ladda upp koden
-*Ladda upp .htaccess
-*Ändra databas i model/Connection
+* Ladda upp koden
+* Ladda upp .htaccess
+* Ändra databas i model/Connection
 
 ## .htaccess
 
