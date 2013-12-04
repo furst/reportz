@@ -19,7 +19,7 @@ Förutsätter att användaren är inloggad
 7. Användaren klickar på "eller fortsätt till rapport"
 8. Systemet visar information om rapporten
 
-Extensions
+#### Extensions
 3a. Användaren skriver in en tomsträng
 1. Systemet visar valideringsfel
 
