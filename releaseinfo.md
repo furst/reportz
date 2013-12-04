@@ -1,5 +1,12 @@
 # Releaseinfo
 
+## Kör
+
+* www.flexboard.se
+* logga in med "adde", "abc123"
+
+## Ladda upp
+
 * Ladda upp koden
 * Ladda upp .htaccess
 * Ändra databas i model/Connection
