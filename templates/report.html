@@ -1,0 +1,67 @@
+{% extends 'admin-layout.html' %}
+
+{% block page_title %}Survey manager - Rapport({{ name }}){% endblock %}
+
+{% block content %}
+
+	<div class="main">
+		<div class="edit">
+			<h2 class="edit-header">{{ report.name }}</h2>
+
+			<a class="edit-link" href="../edit-report/{{ uniqueName }}">Ändra</a>
+		</div>
+
+		<p>{{ message }}</p>
+
+		<div class="report-info">
+
+			<p>Länk till rapport: <a target="_blank" href="../public/report/{{ uniqueName }}">http://localhost:8888/Plugg/PHP-kursen/projekt_survey/public/report/{{ uniqueName }}</a></p>
+
+			<p>Antal testfall: {{ testcases|length }}</p>
+
+		</div>
+
+		<div class="report-con">
+
+			<div class="report-left">
+
+			<h3>Testfall</h3>
+
+				{% for testcase in testcases %}
+					<div class="reportrow">
+						<div class="left">
+							{{ testcase.name|e }}
+						</div>
+						<div class="right">
+							<a href="{{ uniqueName }}/edit-testcase/{{ testcase.id }}">Editera</a> | 
+							<a href="{{ uniqueName }}/delete-testcase/{{ testcase.id }}">Ta bort</a>
+						</div>
+					</div>
+				{% endfor %}
+				</ul>
+
+				<p><a href="../new-report/{{ uniqueName }}">Lägg till testfall +</a></p>
+
+			</div>
+
+			<div class="report-right">
+
+				<h3>Ifyllda rapporter</h3>
+
+				{% for report in reportsFilled %}
+					<div class="reportrow">
+						<div class="left">
+							{{ report.username|e }}
+						</div>
+						<div class="right">
+							<a href="../view-report/{{ uniqueName }}/{{ report.unique_id|e }}">Visa</a> | 
+							<a target="_blank" href="../public/edit-report/{{ uniqueName }}/{{ report.unique_id|e }}">Editera</a>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+
+		</div>
+	</div>
+
+{% endblock %}

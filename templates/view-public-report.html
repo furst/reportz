@@ -1,0 +1,56 @@
+{% extends 'layout.html' %}
+
+{% block page_title %}Survey manager - Rapport({{ report.name }}){% endblock %}
+
+{% block content %}
+
+	<div class="main">
+		<div class="edit">
+			<h2 class="edit-header">{{ report.name }}</h2>
+
+			<a class="edit-link" href="../../report/{{ uniqueName }}">Tillbaka</a>
+		</div>
+
+		<h3>{{ filledReport.username }}</h3>
+
+		<p>Unikt id: {{ filledReport.uniqueId }}</p>
+
+		<hr>
+
+		{% for testcase in testcases %}
+
+			{% set message = '' %}
+
+			{% for filledTestcase in filledTestcases %}
+
+				{% if testcase.id == filledTestcase.testcase_id %}
+
+					{% if filledTestcase.is_completed == 1 %}
+
+						{% set message = 'Uppfyller testfallet' %}
+
+					{% else %}
+
+						{% set message = 'Uppfyller inte testfallet' %}
+
+					{% endif %}
+
+				{% endif %}
+
+			{% endfor %}
+
+			<h3>{{ testcase.name|e }}</h3>
+			<p>{{ testcase.description|e }}</p>
+			<p class="testcase-message">{{ message }}</p>
+			<div class="comment-con">
+			<h4>Kommentarer</h4>
+			{% for comment in testcase.comments %}
+				<p><strong>{{ comment.name }}:</strong> {{ comment.content }}</p>
+			{% endfor %}
+			</div>
+			<a class="comment-show" href="#">Visa/dölj kommentarer ({{ testcase.comments|length }})</a>
+			<hr>
+		{% endfor %}
+	</div>
+
+{% endblock %}

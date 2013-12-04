@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+
+{% block page_title %}Survey manager{% endblock %}
+
+{% block content %}
+	<h2>Logga in</h2>
+	<a href="/Plugg/PHP-kursen/projekt_survey">Tillbaka</a>
+	<p>{{ error }}</p>
+	<form method="POST">
+		<p><input type="text" name="username" placeholder="Användarnamn" value="{{ username }}"></p>
+		<p><input type="password" name="password" placeholder="Lösenord"></p>
+		<p><input type="submit" name="submit" value="Logga in"></p>
+	</form>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'admin-layout.html' %}
+
+{% block page_title %}Survey manager - Dashboard{% endblock %}
+
+{% block content %}
+
+	<h2>Dashboard</h2>
+
+	<a href="new-report">Ny rapport +</a>
+
+	<div class="dashboard">
+
+		<div class="dashboard-left">
+
+		<h3>Senaste rapporter</h3>
+
+		{% for report in reports %}
+
+			<div class="reportrow">
+
+				<a href="report/{{ report.unique_name }}">{{ report.name }}</a>
+
+			</div>
+
+		{% endfor %}
+
+		</div>
+
+		<div class="dashboard-right">
+
+		<h3>Senast ifyllda rapporter</h3>
+
+		{% for filledReport in filledReports %}
+
+			<div class="reportrow">
+
+				<a href="view-report/{{ filledReport.report.uniqueName }}/{{ filledReport.unique_id }}">Användarnamn: {{ filledReport.username }}<br>Rapport: {{ filledReport.report.name }}</a>
+			</div>
+
+		{% endfor %}
+
+		</div>
+	</div>
+
+{% endblock %}

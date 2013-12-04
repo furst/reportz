@@ -1,0 +1,26 @@
+{% extends 'admin-layout.html' %}
+
+{% block page_title %}Survey manager - Rapporter{% endblock %}
+
+{% block content %}
+
+	<div class="main">
+		<h2>Rapporter</h2>
+
+		<p>Antal rapporter: {{ reports|length }}</p>
+
+		{% for report in reports %}
+			<div class="reportrow">
+				<div class="left">
+					<a href="report/{{ report.unique_name|e }}">{{ report.name|e }}</a>
+				</div>
+				<div class="right">
+					<a href="report/{{ report.unique_name|e }}/duplicate">Duplicera</a> | 
+					<a href="reports/{{ report.unique_name|e }}/delete">Ta bort</a></a>
+				</div>
+			</div>
+		{% endfor %}
+		</ul>
+	</div>
+
+{% endblock %}

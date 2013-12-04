@@ -1,0 +1,27 @@
+{% extends 'admin-layout.html' %}
+
+{% block page_title %}Survey manager - Ny rapport{% endblock %}
+
+{% block content %}
+
+	<div class="main">
+		<h2>{{ report.name }}</h2>
+
+		<h3>Editera testfall {{ testcase.name }}</h3>
+
+		{{ message }}
+
+		<form method="POST">
+			<p><input type="text" name="name" placeholder="Namn på testfall" value="{{ testcase.name }}"></p>
+			<p><textarea name="description" placeholder="Beskrivning">{{ testcase.description }}</textarea></p>
+			<div class="row">
+				<div class="left">
+					<input type="submit" value="Uppdatera testfall">
+				</div>
+		</form>
+
+			<a class="left abort" href="../../../report/{{ uniqueName }}">eller avbryt</a>
+			</div>
+	</div>
+
+{% endblock %}

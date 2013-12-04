@@ -1,0 +1,18 @@
+{% extends 'admin-layout.html' %}
+
+{% block page_title %}Survey manager - Ny rapport{% endblock %}
+
+{% block content %}
+
+	<div class="main">
+		<h2>Ny rapport</h2>
+
+		{{ message }}
+
+		<form method="POST">
+			<p><input type="text" name="name" placeholder="Namn på rapport" value="{{ input.name }}"></p>
+			<input type="submit" value="Spara">
+		</form>
+	</div>
+
+{% endblock %}

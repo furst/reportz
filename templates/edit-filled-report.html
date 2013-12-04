@@ -1,0 +1,74 @@
+{% extends 'layout.html' %}
+
+{% block page_title %}Survey manager - Rapport({{ report.name }}){% endblock %}
+
+{% block content %}
+
+	<div class="main">
+		<h2>{{ report.name }}</h2>
+
+		<h3>Användarnamn: {{ username }}</h3>
+
+		{{ message }}
+
+		<form method="POST">
+
+			<input type="hidden" name="report_id" value="{{report.id}}">
+
+			<hr>
+
+		{% for testcase in testcases %}
+
+			{% set radiotrue = '' %}
+			{% set radiofalse = '' %}
+
+			{% for filledTestcase in filledTestcases %}
+
+				{% if testcase.id == filledTestcase.testcase_id %}
+
+					{% if filledTestcase.is_completed == 1 %}
+
+						{% set radiotrue = 'checked' %}
+
+					{% else %}
+
+						{% set radiofalse = 'checked' %}
+
+					{% endif %}
+
+				{% endif %}
+
+			{% endfor %}
+
+			<h3>{{ testcase.name|e }}</h3>
+			<p>{{ testcase.description|e }}</p>
+			<p>
+				<input type="radio" name="{{testcase.id}}" value="true" {{ radiotrue }}>Klarar testfallet<br>
+				<input type="radio" name="{{testcase.id}}" value="false" {{ radiofalse }}>Klarar inte testfallet
+			</p>
+			<div class="comment-con">
+				<h4>Kommentarer</h4>
+				<div class="comments">
+				{% for comment in testcase.comments %}
+					<p><strong>{{ comment.name }}:</strong> {{ comment.content }}</p>
+				{% endfor %}
+				</div>
+				<div class="comment-form">
+					<p><input type="text" class="name" name="name" placeholder="Skriv ditt namn" maxlength="30"></p>
+					<p><textarea class="content" name="content" placeholder="Skriv kommentar" maxlength="140"></textarea></p>
+					<input type="hidden" name="testcase_id" value="{{ testcase.id }}">
+					<p><input type="submit" value="Kommentera"></p>
+				</div>
+				<p class="error"></p>
+
+			</div>
+			<a class="comment-show" href="#">Visa/dölj kommentarer ({{ testcase.comments|length }})</a>
+			<hr>
+		{% endfor %}
+
+		<input type="submit" value="Skicka rapport">
+
+		</form>
+	</div>
+
+{% endblock %}
