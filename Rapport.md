@@ -5,7 +5,7 @@
 * Repo: https://github.com/furst/reportz
 * Testfall: https://github.com/furst/reportz/blob/master/use-cases.md
 * Testrapport: http://flexboard.se/view-report/Reportz/af222ht529f7b87cde5a
-* Klassdiagram: http://yuml.me/86311a5e
+* Klassdiagram: http://yuml.me/86311a5e (det är en dubbelpil på ett ställe som ska bort)
 * Dokumentation: https://github.com/furst/reportz/blob/master/releaseinfo.md
 
 ## Komma åt applikationen
